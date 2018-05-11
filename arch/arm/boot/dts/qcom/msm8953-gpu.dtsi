@@ -71,6 +71,8 @@
 		
 		qcom,idle-timeout = <34>; //msecs
 
+		/* Disable wake-on-touch */
+		qcom,disable-wake-on-touch;
 
 		qcom,deep-nap-timeout = <100>; //msecs
 		qcom,strtstp-sleepwake;
