@@ -17,8 +17,8 @@
 	rpm-regulator-smpa1 {
 		status = "okay";
 		pm8953_s1: regulator-s1 {
-			regulator-min-microvolt = <870000>;
-			regulator-max-microvolt = <1156000>;
+			regulator-min-microvolt = <0xc3500>;
+			regulator-max-microvolt = <0x116520>;
 			qcom,init-voltage = <1000000>;
 			status = "okay";
 		};
@@ -138,7 +138,7 @@
 		status = "okay";
 		pm8953_l1: regulator-l1 {
 			regulator-min-microvolt = <1000000>;
-			regulator-max-microvolt = <1100000>;
+			regulator-max-microvolt = <1000000>;
 			qcom,init-voltage = <1000000>;
 			status = "okay";
 		};
@@ -296,8 +296,8 @@
 	rpm-regulator-ldoa22 {
 		status = "okay";
 		pm8953_l22: regulator-l22 {
-			regulator-min-microvolt = <2800000>;
-			regulator-max-microvolt = <2850000>;
+			regulator-min-microvolt = <0x1ab3f0>;
+			regulator-max-microvolt = <2800000>;
 			qcom,init-voltage = <2800000>;
 			status = "okay";
 		};
@@ -403,8 +403,9 @@
 			apc_vreg: regulator {
 				regulator-name = "apc_corner";
 				regulator-min-microvolt = <1>;
-				regulator-max-microvolt = <20>; // Make sure this same as max freq tuple
 
+				regulator-max-microvolt = <20>; // Make sure this same as max freq tuple
+				
 				/* NOTE : DON'T TOUCH THIS, #BlameQCOM */
 				qcom,cpr-fuse-corners = <4>;
 				qcom,cpr-fuse-combos = <64>;
@@ -554,7 +555,7 @@
 					<1843200>,
 					<1958400>,
 					<2016000>;
-
+		
 				/* NOTE : SOC Specific, don't touch */
 				qcom,cpr-open-loop-voltage-fuse-adjustment =
 					/* Speed bin 0; CPR rev 0..7 */
@@ -662,9 +663,12 @@
 		qcom,ldo-voltage-ceiling = <615000 675000 720000>;
 		qcom,ldo-voltage-floor =   <485000 485000 575000>;
 
-		qcom,num-corners = <7>;
+		qcom,ldo-voltage-ceiling = <620000 680000 750000>;
+		qcom,ldo-voltage-floor =   <510000 510000 600000>;
+
+		qcom,num-corners = <0x8>;
 		qcom,num-ldo-corners = <3>;
-		qcom,ldo-enable-corner-map = <1 1 1 0 0 0 0>;
+		qcom,ldo-enable-corner-map = <1 1 1 0 0 0 0 0>;
 		qcom,init-corner = <4>;
 
 		/* FIXME : This part can't be parsed, why this exists? */
@@ -675,6 +679,7 @@
 					<RPM_SMD_REGULATOR_LEVEL_SVS_PLUS>,
 					<RPM_SMD_REGULATOR_LEVEL_NOM>,
 					<RPM_SMD_REGULATOR_LEVEL_NOM_PLUS>,
+					<RPM_SMD_REGULATOR_LEVEL_TURBO>,
 					<RPM_SMD_REGULATOR_LEVEL_TURBO>;
 
 		mem-acc-supply = <&gfx_mem_acc>;
