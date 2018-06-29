@@ -84,7 +84,7 @@ unsigned int normalized_sysctl_sched_min_granularity = 500000ULL;
 /*
  * is kept at sysctl_sched_latency / sysctl_sched_min_granularity
  */
-static unsigned int sched_nr_latency = 6;
+static unsigned int sched_nr_latency = 4;
 
 
 /*
