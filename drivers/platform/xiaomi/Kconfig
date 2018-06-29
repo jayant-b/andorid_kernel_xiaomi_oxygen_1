@@ -8,6 +8,12 @@ config MACH_XIAOMI_MSM8953
 
 menu "Xiaomi board selection"
 
+config MACH_XIAOMI_OXYGEN
+        bool "oxygen board"
+        select MACH_XIAOMI_MSM8953
+        help
+          Support for Xiaomi Mi Max 2
+
 config MACH_XIAOMI_MIDO
         bool "Mido board"
         select MACH_XIAOMI_MSM8953
