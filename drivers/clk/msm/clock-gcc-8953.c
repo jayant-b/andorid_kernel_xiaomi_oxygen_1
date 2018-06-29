@@ -4041,5 +4041,3 @@ static int __init msm_gcc_gfx_init(void)
 	return platform_driver_register(&msm_clock_gcc_gfx_driver);
 }
 arch_initcall_sync(msm_gcc_gfx_init);
-
- * Copyright (c) 2015-2016, The Linux Foundation. All rights reserved.
